@@ -1,1 +1,51 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: gray;
+  overflow: hidden;
+}
+
+.main {
+  margin: auto;
+  background-color: white;
+  width: 1100px;
+  height: 100vh;
+}
+
+.main h1 {
+  margin-bottom: 50px;
+  padding-top: 10px;
+}
+
+.slider-images {
+  position: relative;
+  right: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: inline-block;
+  width: 2000px;
+}
+
+.row {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.slider-image {
+  height: 150px;
+}
+
+.arrow {
+  width: 100px;
+  height: 100px;
+}
+/*# sourceMappingURL=style.css.map */
