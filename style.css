@@ -25,19 +25,12 @@ body {
 
 .slider-images {
   position: relative;
-  right: 100%;
+  right: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   display: inline-block;
   width: 2000px;
-}
-
-.row {
-  display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .slider-image {
@@ -47,5 +40,22 @@ body {
 .arrow {
   width: 100px;
   height: 100px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.row div {
+  display: inline-block;
+}
+
+.row div img {
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */

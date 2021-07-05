@@ -22,15 +22,10 @@ body {
 }
 .slider-images {
   position: relative;
-  right: 100%;
+  right: 1200px;
   display: flex;
   display: inline-block;
   width: 2000px;
-}
-
-.row {
-  display: block;
-  width: fit-content;
 }
 
 .slider-image {
@@ -40,4 +35,15 @@ body {
 .arrow {
   width: 100px;
   height: 100px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  div {
+    display: inline-block;
+    img {
+      border-radius: 10px;
+    }
+  }
 }
