@@ -11,28 +11,19 @@ let imagesArrayBottom = [];
 for (let i = 1; i <= imageNum; i++) {
   imagesArrayTop = [
     ...imagesArrayTop,
-    `<img class="slider-image" src="/images/slider-image-${i}.jpg">`,
+    `<div id="imgdiv"><img class="slider-image" src="/images/slider-image-${i}.jpg"></div>`,
   ];
   imagesArrayBottom = [
     ...imagesArrayBottom,
-    `<img class="slider-image" src="/images/slider-image-${
+    `<div id="imgdiv"><img class="slider-image" src="/images/slider-image-${
       imageNum - i + 1
-    }.jpg">`,
+    }.jpg"></div>`,
   ];
 }
 
-console.log(imagesArrayBottom);
-console.log(imagesArrayTop);
+topRow.innerHTML = imagesArrayTop.map((imgDiv) => imgDiv).join("");
 
-for (let i = 0; i < imageNum; i++) {
-  const divTop = document.createElement("div");
-  divTop.innerHTML = imagesArrayTop[i];
-  topRow.appendChild(divTop);
-
-  const divBottom = document.createElement("div");
-  divBottom.innerHTML = imagesArrayBottom[i];
-  bottomRow.appendChild(divBottom);
-}
+bottomRow.innerHTML = imagesArrayBottom.map((imgDiv) => imgDiv).join("");
 
 const handleLeftClick = () => {
   imagesArrayTop.unshift(imagesArrayTop[imageNum - 1]);
@@ -44,17 +35,15 @@ const handleLeftClick = () => {
   topRow.innerHTML = "";
   bottomRow.innerHTML = "";
 
-  for (let i = 0; i < imageNum; i++) {
-    const divTop = document.createElement("div");
-    divTop.innerHTML = imagesArrayTop[i];
-    topRow.appendChild(divTop);
+  topRow.innerHTML = imagesArrayTop.map((imgDiv) => imgDiv);
+  bottomRow.innerHTML = imagesArrayBottom.map((imgDiv) => imgDiv);
 
-    const divBottom = document.createElement("div");
-    divBottom.innerHTML = imagesArrayBottom[i];
-    bottomRow.appendChild(divBottom);
-  }
-
-  console.log(imagesArrayTop);
+  const imgDiv = document.getElementById("imgdiv");
+  imgDiv.setAttribute(
+    "style",
+    `translateX=${bottomRow.lastElementChild.offsetWidth}`
+  );
+  imgDiv.innerText = "1";
 };
 
 const handleRightClick = () => {
@@ -67,17 +56,8 @@ const handleRightClick = () => {
   topRow.innerHTML = "";
   bottomRow.innerHTML = "";
 
-  for (let i = 0; i < imageNum; i++) {
-    const divTop = document.createElement("div");
-    divTop.innerHTML = imagesArrayTop[i];
-    topRow.appendChild(divTop);
-
-    const divBottom = document.createElement("div");
-    divBottom.innerHTML = imagesArrayBottom[i];
-    bottomRow.appendChild(divBottom);
-  }
-
-  console.log(imagesArrayTop);
+  topRow.innerHTML = imagesArrayTop.map((imgDiv) => imgDiv).join("");
+  bottomRow.innerHTML = imagesArrayBottom.map((imgDiv) => imgDiv).join("");
 };
 
 leftArrow.addEventListener("click", handleLeftClick);
